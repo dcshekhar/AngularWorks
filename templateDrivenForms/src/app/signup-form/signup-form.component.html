@@ -1,56 +1,89 @@
 <div class="container">
-  <div class="wrapper mt-5">
-    <h4 class="mb-5">Template Driven Approach</h4>
-    <form #loginForm="ngForm" (ngSubmit)=createAccount(loginForm.value)>
-      <div class="form-group">
-        <input type="text" class="form-control" [ngModel]="firstname" name="firstname" #FirstName="ngModel" placeholder="FirstName">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" name="lastname" placeholder="LastName" [(ngModel)]="lastname" #LastName="ngModel">
-      </div>
-      <div class="form-group">
-        <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="password"
-          #Password="ngModel">
-      </div>
-      <div class="form-group">
-        <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password" [(ngModel)]="confirmPassword"
-          #ConfirmPassword="ngModel">
-      </div>
-      <div class="form-group">
-        <div class="mb-2">Date of Birth</div>
-        <div class="d-flex">
-          <div>
-            <select name="day" class="form-control" [ngModel]="day">
-              <option *ngFor="let date of dates" [ngValue]="date">{{date}}</option>
-            </select>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="mb-5 text-center">Template Driven Approach</h4>
+    </div>
+    <div class="col-md-4">
+
+
+      <div class="wrapper">
+
+        <form #loginFormControl="ngForm" (ngSubmit)=createAccount(loginFormControl.value)>
+          <div class="form-group">
+            <input type="text" class="form-control" name="firstname" [(ngModel)]="demoUser.firstname" #firstnameControl="ngModel"
+              placeholder="FirstName">
           </div>
-          <div class="ml-2 mr-2">
-            <select name="month" class="form-control" [ngModel]="month">
-              <option *ngFor="let month of months" [ngValue]="month">{{month}}</option>
-            </select>
+          <div class="form-group">
+            <input type="text" class="form-control" name="lastname" placeholder="LastName" [(ngModel)]="demoUser.lastname"
+              #lastnameControl="ngModel">
           </div>
-          <div>
-            <select name="year" class="form-control" [(ngModel)]="year">
-              <option value="" disabled selected>Year</option>
-              <option *ngFor="let year of years" [ngValue]="year">{{year}}</option>
-            </select>
+
+          <div class="form-group">
+            <input type="text" class="form-control" name="email" placeholder="Email" [(ngModel)]="demoUser.email"
+              #emailControl="ngModel">
           </div>
-        </div>
+
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="demoUser.password"
+              #passwordControl="ngModel">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password"
+              [(ngModel)]="demoUser.confirmPassword" #confirmPasswordControl="ngModel">
+          </div>
+          <!-- <div class="form-group">
+            <div class="mb-2">Date of Birth</div>
+            <div class="d-flex">
+              <div>
+                <select name="day" class="form-control" [ngModel]="day">
+                  <option *ngFor="let date of dates" [ngValue]="date">{{date}}</option>
+                </select>
+              </div>
+              <div class="ml-2 mr-2">
+                <select name="month" class="form-control" [ngModel]="month">
+                  <option *ngFor="let month of months" [ngValue]="month">{{month}}</option>
+                </select>
+              </div>
+              <div>
+                <select name="year" class="form-control" [(ngModel)]="year">
+                  <option value="" disabled selected>Year</option>
+                  <option *ngFor="let year of years" [ngValue]="year">{{year}}</option>
+                </select>
+              </div>
+            </div>
+          </div> -->
+          <!-- <div class="form-group">
+            <div class="mb2">Gender</div>
+            <div class="form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" name="gender" class="form-check-input" value="">
+                Male</label>
+            </div>
+            <div class="form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" name="gender" class="form-check-input" value="">
+                Female</label>
+            </div>
+          </div> -->
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
       </div>
-      <div class="form-group">
-        <div class="mb2">Gender</div>
-        <div class="form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" name="gender" class="form-check-input" value="">
-            Male</label>
-        </div>
-        <div class="form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" name="gender" class="form-check-input" value="">
-            Female</label>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary">Send</button>
-    </form>
+
+    </div>
+
+
+    <div class="col-md-3">
+      <pre>
+      {{loginFormControl.value | json}}
+      </pre>
+    </div>
+
+    <div class="col-md-3">
+      <pre>{{demoUser | json}}</pre>
+    </div>
+
+
   </div>
+
 </div>

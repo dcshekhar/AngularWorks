@@ -1,0 +1,22 @@
+<h4 class="text-center mt-2 mb-2">List Of Cars Avaialabel</h4>
+<a routerLink='/addproduct' class="btn btn-primary mb-1">Add Product</a>
+<table class="table">
+  <thead>
+    <th>
+      Id
+    </th>
+    <th>Car Company</th>
+    <th>Car Model</th>
+    <th>Year of Release</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let car of carsList">
+      <td>{{car.id}}</td>
+      <td>{{car.car_company}}</td>
+      <td>{{car.car_model}}</td>
+      <td>{{car.year_of_release}}</td>
+      <td><button class="btn btn-danger" (click)="delete(car.id)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>

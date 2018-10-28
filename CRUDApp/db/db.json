@@ -1,0 +1,28 @@
+{
+  "carsList": [
+    {
+      "id": 12,
+      "car_company": "Swift",
+      "car_model": "i10",
+      "year_of_release": "2014"
+    },
+    {
+      "id": 14,
+      "car_company": "swi",
+      "car_model": "aa",
+      "year_of_release": "234"
+    },
+    {
+      "id": 15,
+      "car_company": "Renault",
+      "car_model": "Duster",
+      "year_of_release": "2009"
+    },
+    {
+      "id": 16,
+      "car_company": "Mitsubishi",
+      "car_model": "Lancer",
+      "year_of_release": "2004"
+    }
+  ]
+}
